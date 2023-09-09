@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import "./App.css";
 import 'react-chatbot-kit/build/main.css';
 
-import ChatBot from "./components/ChatBot";
+import StudBot from "./components/StudBot";
 import Home from "./components/Home";
 import StudInfo from "./components/StudInfo";
 
@@ -14,7 +14,7 @@ function App() {
       <Router>
         <Routes>
           <Route element={<Home />} path='/'></Route>
-          <Route element={<ChatBot />} path='/chatbot'></Route>
+          <Route element={<StudBot />} path='/chatbot'></Route>
           <Route element={<StudInfo />} path='/studinfo'></Route>
         </Routes>
       </Router>

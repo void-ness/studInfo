@@ -1,14 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Intro = (props) => {
+    const [visible, setVisible] = useState(true);
+
     const handleClick = () => {
-        props.actions.handleIntro();
+        props.actionProvider.handleIntro();
+        props.actionProvider.handleSlotOptions();
+        setVisible(false);
     }
 
     return (
-        <button className="bg-gray-300 w-fit py-1 px-2 ml-12 rounded-lg text-sm" onClick={handleClick}>
-            Got It!
-        </button>
+        <>
+            {visible &&
+                <button className="bg-gray-300 w-fit py-1 px-2 ml-12 rounded-lg text-sm" onClick={handleClick}>
+                    Got It!
+                </button>
+            }
+        </>
     );
 };
 

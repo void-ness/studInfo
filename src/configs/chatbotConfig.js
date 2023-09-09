@@ -1,6 +1,10 @@
 import { createChatBotMessage } from "react-chatbot-kit";
 import DogPicture from "../widgets/DogPicture/DogPicture";
 import Intro from "../widgets/Intro/Intro";
+import Calendar from "../widgets/Calendar";
+import UserName from "../widgets/UserName";
+import UserAge from "../widgets/UserAge";
+import Exit from "../widgets/Exit";
 
 const botName = 'Student Info Bot';
 
@@ -16,12 +20,28 @@ const config = {
     widgets: [
         {
             widgetName: 'dogPicture',
-            widgetFunc: (props) => DogPicture,
+            widgetFunc: (props) => <DogPicture {...props} />,
         },
         {
             widgetName: 'intro',
             widgetFunc: (props) => <Intro {...props} />,
         },
+        {
+            widgetName: 'calendar',
+            widgetFunc: (props) => <Calendar {...props} />
+        },
+        {
+            widgetName: 'username',
+            widgetFunc: (props) => <UserName {...props} />
+        },
+        {
+            widgetName: 'age',
+            widgetFunc: (props) => <UserAge {...props} />
+        },
+        {
+            widgetName: 'exit',
+            widgetFunc: (props) => <Exit {...props} />
+        }
     ],
     customStyles: {
         botMessageBox: {
@@ -34,61 +54,3 @@ const config = {
 }
 
 export default config
-
-// import React from "react";
-// import { createChatBotMessage } from "react-chatbot-kit";
-
-// import Overview from "../components/widgets/Overview/Overview";
-// import MessageParser from "../components/widgets/MessageParser/MessageParser";
-// import ActionProviderDocs from "../components/widgets/ActionProvider/ActionProviderDocs";
-
-// const botName = "DocsBot";
-
-// const config = {
-//     botName: botName,
-//     lang: "no",
-//     customStyles: {
-//         botMessageBox: {
-//             backgroundColor: "#376B7E",
-//         },
-//         chatButton: {
-//             backgroundColor: "#5ccc9d",
-//         },
-//     },
-//     initialMessages: [
-//         createChatBotMessage(
-//             `Hi I'm ${botName}. I’m here to help you explain how I work.`
-//         ),
-//         createChatBotMessage(
-//             "Here's a quick overview over what I need to function. ask me about the different parts to dive deeper.",
-//             {
-//                 withAvatar: false,
-//                 delay: 500,
-//                 widget: "overview",
-//             }
-//         ),
-//     ],
-//     state: {
-//         gist: "",
-//     },
-//     customComponents: {},
-//     widgets: [
-//         {
-//             widgetName: "overview",
-//             widgetFunc: (props) => <Overview {...props} />,
-//             mapStateToProps: ["gist"],
-//         },
-//         {
-//             widgetName: "messageParser",
-//             widgetFunc: (props) => <MessageParser {...props} />,
-//             mapStateToProps: ["gist"],
-//         },
-//         {
-//             widgetName: "actionProviderDocs",
-//             widgetFunc: (props) => <ActionProviderDocs {...props} />,
-//             mapStateToProps: ["gist"],
-//         },
-//     ],
-// };
-
-// export default config;

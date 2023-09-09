@@ -9,11 +9,6 @@ const MessageParser = ({ children, actions }) => {
             return;
         }
 
-        if (lowercase == "got it!") {
-            actions.handleSlot();
-            return;
-        }
-
         else {
             actions.handleException();
             return;
@@ -25,7 +20,7 @@ const MessageParser = ({ children, actions }) => {
             {React.Children.map(children, (child) => {
                 return React.cloneElement(child, {
                     parse: parse,
-                    actions: {},
+                    actions: actions,
                 });
             })}
         </div>
