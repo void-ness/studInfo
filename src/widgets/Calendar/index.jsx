@@ -1,15 +1,22 @@
 import React, { useEffect, useState } from "react";
 import data from "./data";
+import './style.css';
+
+import { useDispatch } from 'react-redux';
+import { updateDate } from "../../features/user/userSlice";
 
 const Calendar = (props) => {
     const [date, setDate] = useState(null);
     const [time, setTime] = useState(null);
     const [hidden, setHidden] = useState(false);
+    const dispatch = useDispatch();
 
     useEffect(() => {
         if (date && time) {
             props.actionProvider.handleSlotBooking(date, time);
             props.actionProvider.handleInputName();
+            dispatch(updateDate({ date, time }));
+
             setDate(null);
             setTime(null);
             setHidden(true);
@@ -21,7 +28,7 @@ const Calendar = (props) => {
         <div className="flex flex-col">
             {!hidden &&
                 <>
-                    <div className="flex overflow-auto">
+                    <div className="flex overflow-auto date-container">
                         {data.dateSlots.map((slot, i) => {
                             return (
                                 <div key={i} className={`flex flex-col items-center m-2 ml-0 text-xs shadow-lg  min-w-fit shadow-slate-300 ${date === slot ? 'bg-blue-300 text-white font-semibold' : ''} text-blue-400 py-1 px-5 rounded-lg transition-all ease-in`} onClick={() => setDate(slot)}>

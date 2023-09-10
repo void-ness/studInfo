@@ -7,7 +7,7 @@ import ActionProvider from "../../chatbot/ActionProvider";
 const StudBot = () => {
     return (
         <>
-            <div className="bot-container w-min mx-auto mt-20 p-10 bg-gray-300 rounded-lg">
+            <div className="bot-container w-min mx-auto pt-20 scale-110">
                 <Chatbot
                     config={config}
                     messageParser={MessageParser}

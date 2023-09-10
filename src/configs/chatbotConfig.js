@@ -1,5 +1,4 @@
 import { createChatBotMessage } from "react-chatbot-kit";
-import DogPicture from "../widgets/DogPicture/DogPicture";
 import Intro from "../widgets/Intro/Intro";
 import Calendar from "../widgets/Calendar";
 import UserName from "../widgets/UserName";
@@ -18,10 +17,6 @@ const config = {
         )
     ],
     widgets: [
-        {
-            widgetName: 'dogPicture',
-            widgetFunc: (props) => <DogPicture {...props} />,
-        },
         {
             widgetName: 'intro',
             widgetFunc: (props) => <Intro {...props} />,
@@ -45,10 +40,10 @@ const config = {
     ],
     customStyles: {
         botMessageBox: {
-            backgroundColor: '#376B7E',
+            backgroundColor: '#89c1ff',
         },
         chatButton: {
-            backgroundColor: '#5ccc9d',
+            backgroundColor: '#004086',
         },
     },
 }

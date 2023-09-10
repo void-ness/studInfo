@@ -1,0 +1,11 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(to top right, rgb(4, 17, 101), rgba(65, 130, 228, 0.707), rgb(191, 221, 254));
+    background-repeat: no-repeat;
+    height: 100vh;
+}
