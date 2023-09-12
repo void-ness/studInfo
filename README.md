@@ -25,3 +25,12 @@ A student information system to add student related information.
     ```
 
 ## Screenshots
+![image](https://github.com/void-ness/studInfo/assets/78547746/82781c43-731a-478f-9aa5-e7eb64bf1ec5) 
+<br />
+
+_(Home Page)_
+
+![image](https://github.com/void-ness/studInfo/assets/78547746/6263e3fc-ef3e-4166-a6e5-5a0038479989)
+<br />
+
+_(ChatBot Page)_
